@@ -1,4 +1,4 @@
-![Letmeask](.\src\assets\logo.svg)
+<img src='.\src\assets\logo.svg'>
 
 # Letmeask
 
@@ -14,4 +14,4 @@ A aplicação consome dados do Firebase.
 
 ### Login
 
-![Home](.\letmeask-home.svg)
+<img src='.\letmeask-home.svg'>
