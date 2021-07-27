@@ -3,13 +3,19 @@ import logoImg from '../assets/logo.svg'
 import googleIconImg from '../assets/google-icon.svg'
 import '../styles/auth.scss'
 import { Button } from '../components/Button'
-import { useHistory } from 'react-router-dom'
-
+// import { useHistory } from 'react-router-dom'
+import { auth, firebase } from '../services/firebase'
 export function Home() {
-  const history = useHistory();
+  // const history = useHistory();
 
-  function navigateToNewRoom() {
-    history.push('/rooms/new')
+  function handleCreateRoom() {
+
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    auth.signInWithPopup(provider).then(results => {
+      console.log(results);
+    });
+    // history.push('/rooms/new')
   }
 
   return (
@@ -22,7 +28,7 @@ export function Home() {
       <main>
         <div className='main-content'>
           <img src={logoImg} alt="" />
-          <button onClick={navigateToNewRoom} className='create-room'>
+          <button onClick={handleCreateRoom} className='create-room'>
             <img src={googleIconImg} alt="" />
             Crie sua conta com o Google
           </button>
